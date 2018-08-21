@@ -9,6 +9,7 @@ apt-get install git python python3 python-pip python3-pip
 # Install needed packages
 pip3 install requirements.txt
 
+# Move gekkeys to the right folder
 mv gekkeys.py /usr/bin/gekkeys.py
 
 # Create alias for cli
