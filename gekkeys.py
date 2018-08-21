@@ -241,5 +241,6 @@ if __name__ == '__main__':
     for out in app.output:
         print(out)
 
+# Create requi**.txt pipreqs path
 # HOWTO: run:
 # EXAMPLE  python alohomora.py -a create-user -s dev -n haingo@gekko.fr -p mypass -d "{'username': 'ethan', 'password': 'mypass', 'role': 'admin', 'env': 'gekko'}" -u https://x2z4uxl2jd.execute-api.eu-west-1.amazonaws.com
