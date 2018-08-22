@@ -15,7 +15,7 @@ mv gekkeys.py /usr/bin/gekkeys.py
 chmod +x /usr/bin/gekkeys.py
 
 # Create alias for cli
-echo "alias gekkeys='/usr/bin/gekkeys.py'" >> ~/.bashrc
+#echo "alias gekkeys='/usr/bin/gekkeys.py'" >> ~/.bashrc
 
 # Reload bashrc
-source ~/.bashrc
+#source ~/.bashrc
