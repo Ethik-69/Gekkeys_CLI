@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 import sys
 import time
@@ -8,7 +8,7 @@ from docopt import docopt
 from threading import Thread
 
 
-class Alohomora(Thread):
+class Gekkeys(Thread):
     def __init__(self, arguments, called_from):
         """
         arguments structure:
@@ -29,6 +29,7 @@ class Alohomora(Thread):
         data is the result of:
             json.dumps(python Dict / json)
         """
+        # SUPER to call __init__ from Thread
         Thread.__init__(self)
 
         self.arguments = arguments
@@ -205,13 +206,15 @@ if __name__ == '__main__':
       -u --url=<url>                    API's url.
 
     Example for data:
-        "{'group': 'gekko', 'key_name': 'aws_key', 'key_content': 'ssh_key_content}"
+        '{"group": "gekko", "key_name": "aws_key", "key_content": "ssh_key_content"}'
     """
 
     arguments = docopt(help)
 
     # Instantiation of main object with "term" when launched with the terminal
-    app = Alohomora(arguments, "term")
+    app = Gekkeys(arguments, "term")
+
+    # Launch the thread
     app.start()
 
     loader = ["[=     ]",
@@ -225,16 +228,19 @@ if __name__ == '__main__':
               "[      ]"]
     i = 0
 
+    # Wait until the thread is finished
     while app.is_alive():
         time.sleep(0.1)
         if i >= len(loader):
             i = 0
-        text = "\r%s" % loader[i]
 
+        text = "\r%s" % loader[i]
+        # print the beautiful "spinner"
         sys.stdout.write(text)
         sys.stdout.flush()
         i += 1
 
+    # Clean the last "spinner" step from screen
     sys.stdout.write("\r")
     sys.stdout.flush()
 
@@ -243,4 +249,4 @@ if __name__ == '__main__':
 
 # Create requi**.txt pipreqs path
 # HOWTO: run:
-# EXAMPLE  python alohomora.py -a create-user -s dev -n haingo@gekko.fr -p mypass -d "{'username': 'ethan', 'password': 'mypass', 'role': 'admin', 'env': 'gekko'}" -u https://x2z4uxl2jd.execute-api.eu-west-1.amazonaws.com
+# EXAMPLE  python alohomora.py -a create-user -s dev -n haingo@gekko.fr -p mypass -d '{"username": "ethan", "password": "mypass", "role": "admin", "env": "gekko"}' -u https://x2z4uxl2jd.execute-api.eu-west-1.amazonaws.com
