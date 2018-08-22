@@ -4,7 +4,7 @@
 apt-get update
 
 # Install python, pip
-apt-get install python python3 python-pip python3-pip
+apt-get install python python3 python-pip python3-pip -y
 
 # In case, maybe... export LC_ALL=C
 
