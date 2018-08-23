@@ -11,9 +11,9 @@ apt-get install python python3 python-pip python3-pip -y
 # Install needed packages
 pip3 install -r requirements.txt
 
-# Move gekkeys to the right folder
-mv gekkeys.py /usr/bin/gekkeys
-chmod +x /usr/bin/gekkeys
+# Move geekkeys to the right folder
+mv geekkeys.py /usr/bin/geekkeys
+chmod +x /usr/bin/geekkeys
 
 # UserData
 #!/bin/sh
